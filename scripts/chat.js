@@ -1,7 +1,3 @@
-// adding new chat documents
-// setting up a real-time listener to get new chats
-// updating the username
-// updating the room
 
 class Chatroom {
     constructor(room, username) {
@@ -12,7 +8,6 @@ class Chatroom {
     }
 
     async addChatMessage(message) {
-        //format a chat object
         const now = new Date();
         const chat = {
             message,
@@ -20,7 +15,6 @@ class Chatroom {
             room: this.room,
             created_at: firebase.firestore.Timestamp.fromDate(now)
         };
-        // save the chat document
         const response = await this.chats.add(chat);
         return response;
     }
