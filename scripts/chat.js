@@ -7,7 +7,7 @@ class Chatroom {
         this.unsub;
     }
 
-    async addChatMessage(message) {
+    async addChat(message) {
         const now = new Date();
         const chat = {
             message,
@@ -43,11 +43,11 @@ class Chatroom {
     }
 }
 
-setTimeout(() => {
-    chatroom.updateRoom('github');
-    chatroom.updateName('yoshi');
-    chatroom.getChats((data) => {
-        console.log(data);
-    });
-    chatroom.addChatMessage('hello');
-}, 3000)
+// setTimeout(() => {
+//     chatroom.updateRoom('github');
+//     chatroom.updateName('yoshi');
+//     chatroom.getChats((data) => {
+//         console.log(data);
+//     });
+//     chatroom.addChatMessage('hello');
+// }, 3000)
