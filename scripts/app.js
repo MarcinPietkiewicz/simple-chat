@@ -31,7 +31,15 @@ newNameForm.addEventListener('submit', e => {
 
 // update the chat room with a new room
 rooms.addEventListener('click', e => {
-    console.log(e);
+    if (e.target.tagName === "BUTTON") {
+        const chatName = e.target.getAttribute('id');
+        console.log('new chat room name is ' + chatName)
+        chatUI.clear();
+        chatroom.updateRoom(chatName);
+        chatroom.getChats(chat => {
+            chatUI.render(chat)
+        })
+    }
 })
 
 
